@@ -17,12 +17,20 @@ Cart.prototype.addItem = function(product, quantity) {
 
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  window.localStorage.setItem('cart', JSON.stringify(this));
 };
 
-Cart.prototype.removeItem = function(item) {
+Cart.prototype.removeItem = function(itemBeingRemoved) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
   // explore some javascript methods like splice?
+  for (let i = 0; i < this.items.length; i ++){
+    //if an item in the items array is the same as the item passed in the parameter
+    if (this.items[i].product === itemBeingRemoved.product){
+      //splice aka remove(position, how many) from items
+      this.items.splice(i, 1);
+    }
+  }
 };
 
 const CartItem = function(product, quantity) {

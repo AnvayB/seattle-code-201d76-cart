@@ -1,1 +1,38 @@
 /* TODO: Make it awesome */
+body {
+  margin: 5%;
+  background-color: wheat;
+}
+
+h1:not(section.deck.col-1) {
+  text-align: center;
+
+  font-weight: bold;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+}
+
+li {
+  display: inline;
+  align-items: center;
+
+}
+
+.copy li {
+  display: table;
+  text-align: justify;
+}
+
+.card{
+  margin-top: 5%;
+}
+
+#cart th {
+  display: table;
+}
+
+footer {
+  text-align: right;
+  padding-right: 5px;
+  padding-bottom: 50px;
+}

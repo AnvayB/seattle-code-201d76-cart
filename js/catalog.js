@@ -12,6 +12,11 @@ function populateForm() {
   //TODO: Add an <option> tag inside the form's select for each product
   const selectElement = document.getElementById('items');
   for (let i in Product.allProducts) {
+    let aProduct = Product.allProducts[i];
+    let newOptionElem = document.createElement('option');
+    newOptionElem.setAttribute('value', aProduct.name);
+    newOptionElem.innerText = aProduct.name;
+    selectElement.appendChild(newOptionElem);
 
   }
 
@@ -23,10 +28,9 @@ function populateForm() {
 function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
+  event.preventDefault();
 
   // Do all the things ...
-
-  // hey if you want to you can pass values to these functions 
   addSelectedItemToCart();
   cart.saveToLocalStorage();
   updateCounter();
@@ -35,9 +39,11 @@ function handleSubmit(event) {
 }
 
 // TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart() {
+function addSelectedItemToCart(event) {
   // TODO: suss out the item picked from the select list
+  let itemPicked = event.target[1].value
   // TODO: get the quantity
+
   // TODO: using those, add one item to the Cart
 }
 
